@@ -1,2 +1,2 @@
-USE world
+USE world;
 SELECT * FROM city;
