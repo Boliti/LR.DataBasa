@@ -1,5 +1,5 @@
 USE cd;
 /* Выберите членов клуба, которые рекомендовали других членов для вступления. */
-SELECT DISTINCT m1.surname, m1.firstname 
-FROM members m1, members m2 
-WHERE m1.memid = m2.recommendedby;
+SELECT surname, firstname 
+FROM members
+WHERE memid IN (SELECT recommendedby FROM members WHERE recommendedby IS NOT NULL); 
