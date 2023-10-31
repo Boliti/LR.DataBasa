@@ -1,5 +1,5 @@
 USE cd;
-/* Выберите теннисные корты, забронированные пользователями на 19 сентября 2012 года. */
+/* Выберите список бронирований на 14 сентября 2012 г., чтоимость которых более 30. */
 SELECT DISTINCT CONCAT(f.facility, ' - ', m.firstname) AS facilityName, 
 CASE
 WHEN b.memid = 0 THEN f.guestcost * b.slots
