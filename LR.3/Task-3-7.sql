@@ -4,5 +4,4 @@ USE cd;
  упорядочите лист по ФИО (==   имя + фамилия). */
 SELECT CONCAT(m1.surname, ' ', m1.firstname) AS fiomember, (SELECT CONCAT(m2.surname, ' ', m2.firstname) 
 FROM members m2 WHERE m2.memid = m1.recommendedby) AS fiorecommendedby FROM members m1
-WHERE m1.memid != 0
-ORDER BY fiomember;
+WHERE m1.memid != 0 ORDER BY fiomember;
