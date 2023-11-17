@@ -1,4 +1,5 @@
 USE cd;
+/* Рассчитайте для каждого члена количество рекомендаций, данных этим членом клуба, искючив членов, которые не давали рекомендаций */
 SELECT m1.memid AS MemberID,
        CONCAT(m1.firstname, ' ', m1.surname) AS fiomember,
        COUNT(m2.memid) AS RecommendationCount
