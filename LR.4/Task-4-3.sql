@@ -3,3 +3,6 @@ USE cd;
 INSERT INTO facilities (facid, facility, membercost, guestcost, initialoutlay,monthlymaintenance )
 SELECT 12, facility, membercost, guestcost, initialoutlay,monthlymaintenance  FROM facilities WHERE facid = 9;
 SELECT * FROM facilities;
+
+DELETE FROM facilities
+WHERE facid = 12;
