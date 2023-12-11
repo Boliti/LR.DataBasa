@@ -1,4 +1,5 @@
 /*Выберите количество аренд объектов клуба в каждый месяц.*/
-SELECT f.facility,YEAR(b.starttime) AS 'Год', MONTH(b.starttime) AS 'Месяц', COUNT(*) AS 'Количество бронирований' FROM facilities f
-INNER JOIN bookings b ON f.facid = b.facid
-GROUP BY f.facility, MONTH(b.starttime), YEAR(b.starttime);
+SELECT YEAR(b.starttime) AS 'Год', MONTH(b.starttime) AS 'Месяц', f.facility AS 'Название объекта', COUNT(*) AS 'Количество аренд в каждый месяц'
+FROM bookings b
+INNER JOIN facilities f ON b.facid = f.facid
+GROUP BY YEAR(starttime), MONTH(starttime), facility;
