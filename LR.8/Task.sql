@@ -67,7 +67,7 @@ CREATE  OR REPLACE VIEW Available_seats AS
 /*VIEW_3: фильм с указанием максимального количества зрителей. */
 DROP TABLE IF EXISTS CINEMAS.MAX_viewers;
 USE CINEMAS;
-CREATE  OR REPLACE VIEW Available_seats AS 
+CREATE  OR REPLACE VIEW MAX_viewers AS 
   SELECT F.titleFIL, MAX(A.total_tickets) AS max_daily_audience
   FROM Films F
   JOIN Poster P ON F.idFIL = P.film
