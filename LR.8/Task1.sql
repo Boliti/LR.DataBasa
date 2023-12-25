@@ -28,14 +28,3 @@ JOIN (
 ) A ON P.idPOS = A.poster_number
 GROUP BY F.titleFIL, a.visiting_day
 ORDER BY max_daily_audience DESC;
-
-
-SELECT F.titleFIL, A.visiting_day, A.max_daily_audience
-FROM Films F
-JOIN (
-    SELECT P.film, A.visiting_day, MAX(A.total_tickets) AS max_daily_audience
-    FROM Poster P
-    JOIN Audience A ON P.idPOS = A.poster_number
-    GROUP BY P.film, A.visiting_day
-) A ON F.idFIL = A.film
-ORDER BY F.titleFIL, A.visiting_day;
